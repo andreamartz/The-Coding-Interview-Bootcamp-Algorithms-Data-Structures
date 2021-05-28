@@ -7,6 +7,38 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+// Test cases:
+// palindrome('abc!cba'); // true
+// palindrome(' racecar'); // false
+// palindrome(' '); // true
+
+// Strategy:
+
+
+// SOLUTION #1 - uses built-in reverse method for arrays
+// function palindrome(str) {
+//   const reversed = str.split('').reverse().join('');
+//   return reversed === str;
+// }
+
+
+// SOLUTION #2 - uses .every, but does twice as much work as necessary
+// function palindrome(str) {
+//   return str.split('').every((char, i) => char === str[str.length - 1 - i]); 
+// }
+
+// SOLUTION #3
+function palindrome(str) {
+  let left = 0;
+  let right = str.length - 1;
+  while (left < right) {
+    if (str[left] !== str[right]) {
+      return false;
+    }
+    left++;
+    right--;
+  }
+  return true;
+}
 
 module.exports = palindrome;
