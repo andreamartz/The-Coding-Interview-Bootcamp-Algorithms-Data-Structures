@@ -43,7 +43,7 @@
 
 // SOLUTION #2 (with regex)
 function vowels(str) {
-  const regex = /[aeiou]/gi;
+  const regex = /[aeiou]/gi;   // g flag so that the checks won't stop after the first match
   const onlyVowels = str.match(regex);  // array of matching characters OR null if no matches
   return onlyVowels ? onlyVowels.length : 0;
 }
